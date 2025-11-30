@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/vbf4kqw.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Goblin+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/CSS/reset.css">
+    <link rel="stylesheet" href="./assets/CSS/main.css">
+    <title>Créateur de cartes</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="fontSiteTitle">Créateur de cartes</h1>
+        <p id="credits">Par ... / ... / ... / ... et ...</p>
+    </header>
+    <article>
+        <div id="cardArea">
+            <input type="checkbox" name="" id="debugMode">
+            <div id="wrapperCard">
+                <div id="card">
+                    <img src="./assets/Ressources/card0.png" alt="">
+                    <div id="inside">
+                        <div id="cardIllustration">
+                            <div id="propIllustration">
+                                <img src="./assets/Ressources/T_MetalDemonIconBgLess.png" alt="">
+                            </div>
+                        </div>
+                        <div id="cardValues">
+                            <div class="field" id="cardTitre">
+                                <h3 class="fontMonsterTitle">Titre du monstre</h3>
+                            </div>
+                            <div class="field" id="cardInfo1"></div>
+                            <div class="field" id="cardInfo2"></div>
+                            <div class="field" id="cardInfo3"></div>
+                            <div class="field" id="cardInfo4"></div>
+                        </div>
+                        <div id="cardText" class="fontMonsterAttack">
+                            <div id="atk1">
+                                <span id="atk1Icone"></span>
+                                <span id="atk1Name"></span>
+                                <span id="atk1Power"></span>
+                                <span id="atk1Mana"></span>
+                                <span id="atk1Desc"></span>
+                            </div>
+                            <div id="atk2">
+                                <span id="atk2Icone"></span>
+                                <span id="atk2Name"></span>
+                                <span id="atk2Power"></span>
+                                <span id="atk2Mana"></span>
+                                <span id="atk2Desc"></span>
+                            </div>
+                            <div id="atk3">
+                                <span id="atk3Icone"></span>
+                                <span id="atk3Name"></span>
+                                <span id="atk3Power"></span>
+                                <span id="atk3Mana"></span>
+                                <span id="atk3Desc"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="options">
+            <div id="carteBase">
+                <div id="carteIllustration">
+                    <div id="illustrationBoxOption">
+                        <label for="">Illustration</label>
+                        <select name="" id="illustrationOption" class="fileOptionSelection">
+                            <option value="0" selected>Rien</option>
+                            <option value="1">Choix</option>
+                            <option value="2">Importer</option>
+                        </select>
+                    </div>
+                    <div id="filellustrationOptionBox">
+                        <select name="" id="" class="fileOptionSelected1">
+                            <option value="">choixA</option>
+                            <option value="">choixB</option>
+                            <option value="">choixC</option>
+                            <option value="">choixD</option>
+                            <option value="">choixE</option>
+                        </select>
+                        <div class="fileOptionSelected2">
+                            <input type="file" name="" id="illuImport">
+                            <img src="" alt="" id="illuVisu" class="previewBox">
+                        </div>
+                    </div>
+                </div>
+                <div id="carteName">
+                    <label for="carteNameVal">Nom de la carte : </label><input type="text" name="" id="carteNameVal"
+                        placeholder="Nom de la carte" maxlength="20">
+                </div>
+                <div id="carteNbAtk">
+                    <label for="carteNbAtkVal">Nombre d'attaque : </label>
+                    <input type="number" name="" id="carteNbAtkVal" value="1" min="0" max="3">
+                </div>
+                <div id="carteHp">
+                    <label for="carteHpVal">Nombre de PV : </label>
+                    <input type="number" name="" id="carteHpVal" value="0">
+                </div>
+                <div id="carteMana">
+                    <label for="carteNbAtkVal">Nombre de Mana : </label>
+                    <input type="number" name="" id="carteManaVal" value="0">
+                </div>
+            </div>
+            <div id="carteAtk1Info">
+                <div id="atk1Illu">
+                    <label for="">ChoixIcone :</label>
+                    <div id="atk1InfoBoxOption">
+                        <select name="" id="atk1IcoOption" class="fileOptionSelection">
+                            <option value="0" selected>Rien</option>
+                            <option value="1">Choix</option>
+                            <option value="2">Importer</option>
+                        </select>
+                    </div>
+                    <div id="Atk1OptionBox">
+                        <select name="" id="" class="fileOptionSelected1">
+                            <option value="">choixA</option>
+                            <option value="">choixB</option>
+                            <option value="">choixC</option>
+                            <option value="">choixD</option>
+                            <option value="">choixE</option>
+                        </select>
+                        <div class="fileOptionSelected2">
+                            <input type="file" name="" id="atk1Import">
+                            <img src="" alt="" id="atk1Visu" class="previewBox">
+                        </div>
+                    </div>
+                </div>
+                <div id="atkName1">
+                    <label for="">Nom de l'attaque</label>
+                    <input type="text" name="" id="atkName1Val" placeholder="nom de l'attaque">
+                </div>
+                <div id="atkDmg1">
+                    <label for="">Puissance d'attaque</label>
+                    <input type="number" name="" id="atkPower1Val" value="0">
+                </div>
+                <div id="atkMana1">
+                    <label for="">Coût Mana</label>
+                    <input type="number" name="" id="atkMana1Val" value="0">
+                </div>
+                <textarea name="" id="atkDesc1Val" placeholder="description de l'attaque" maxlength="40"></textarea>
+            </div>
+            <div id="carteAtk2Info">
+                <div id="atk2Illu"><label for="">ChoixIcone :</label>
+                    <div id="atk2InfoBoxOption">
+                        <select name="" id="atk2IcoOption" class="fileOptionSelection">
+                            <option value="0" selected>Rien</option>
+                            <option value="1">Choix</option>
+                            <option value="2">Importer</option>
+                        </select>
+                    </div>
+
+                    <div id="atk2OptionBox">
+                        <select name="" id="" class="fileOptionSelected1">
+                            <option value="">choixA</option>
+                            <option value="">choixB</option>
+                            <option value="">choixC</option>
+                            <option value="">choixD</option>
+                            <option value="">choixE</option>
+                        </select>
+                        <div class="fileOptionSelected2">
+                            <input type="file" name="" id="atk2Import">
+                            <img src="" alt="" id="atk2Visu" class="previewBox">
+                        </div>
+                    </div>
+                </div>
+                <div id="atkName2">
+                    <label for="">Nom de l'attaque</label>
+                    <input type="text" name="" id="atkName2Val" placeholder="nom de l'attaque">
+                </div>
+                <div id="atkDmg2">
+                    <label for="">Puissance d'attaque</label>
+                    <input type="number" name="" id="atkPower2Val" value="0">
+                </div>
+                <div id="atkMana2">
+                    <label for="">Coût Mana</label>
+                    <input type="number" name="" id="atkMana2Val" value="0">
+                </div>
+                <textarea name="" id="atkDesc2Val" placeholder="description de l'attaque" maxlength="40"></textarea>
+            </div>
+            <div id="carteAtk3Info">
+                <div id="atk3Illu"><label for="">ChoixIcone :</label>
+                    <div id="atk3InfoBoxOption">
+                        <select name="" id="atk3IcoOption" class="fileOptionSelection">
+                            <option value="0" selected>Rien</option>
+                            <option value="1">Choix</option>
+                            <option value="2">Importer</option>
+                        </select>
+                    </div>
+                    <div id="atk3OptionBox">
+                        <select name="" id="" class="fileOptionSelected1">
+                            <option value="">choixA</option>
+                            <option value="">choixB</option>
+                            <option value="">choixC</option>
+                            <option value="">choixD</option>
+                            <option value="">choixE</option>
+                        </select>
+                        <div class="fileOptionSelected2">
+                            <input type="file" name="" id="atk3Import">
+                            <img src="" alt="" id="atk3Visu" class="previewBox">
+                        </div>
+                    </div>
+                </div>
+                <div id="atkName3">
+                    <label for="">Nom de l'attaque</label>
+                    <input type="text" name="" id="atkName3Val" placeholder="nom de l'attaque">
+                </div>
+                <div id="atkDmg3">
+                    <label for="">Puissance d'attaque</label>
+                    <input type="number" name="" id="atkPower3Val" value="0">
+                    </div>
+                <div id="atkMana3">
+                    <label for="">Coût Mana</label>
+                    <input type="number" name="" id="atkMana3Val" value="0">
+                </div>
+                <textarea name="" id="atk3DescVal" placeholder="description de l'attaque" maxlength="40"></textarea>
+            </div>
+            <div id="carteComplement">
+                <div id="carteBorder">
+                    <label for="">Choix de la bordure : </label>
+                    <div id="borderInfoBoxOption">
+                        <select name="" id="illustrationOption" class="fileOptionSelection">
+                            <option value="0" selected>Rien</option>
+                            <option value="1">Choix</option>
+                            <option value="2">Importer</option>
+                        </select>
+                    </div>
+                    <div id="borderOptionBox">
+                        <select name="" id="" class="fileOptionSelected1">
+                            <option value="">choixA</option>
+                            <option value="">choixB</option>
+                            <option value="">choixC</option>
+                            <option value="">choixD</option>
+                            <option value="">choixE</option>
+                        </select>
+                        <div class="fileOptionSelected2">
+                            <input type="file" name="" id="borderImport">
+                            <img src="" alt="" id="borderVisu" class="previewBox">
+                        </div>
+                    </div>
+                </div>
+                <div id="carteBackground">
+                    <label for="">choix de l'arrière plan : </label>
+
+                    <div id="bgInfoBoxOption">
+                        <select name="" id="bgOption" class="fileOptionSelection">
+                            <option value="0" selected>Rien</option>
+                            <option value="1">Choix</option>
+                            <option value="2">Importer</option>
+                        </select>
+                    </div>
+
+                    <div id="bgOptionBox">
+                        <select name="" id="" class="fileOptionSelected1">
+                            <option value="">choixA</option>
+                            <option value="">choixB</option>
+                            <option value="">choixC</option>
+                            <option value="">choixD</option>
+                            <option value="">choixE</option>
+                        </select>
+                        <div class="fileOptionSelected2">
+                            <input type="file" name="" id="bgImport">
+                            <img src="" alt="" id="bgVisu" class="previewBox">
+                        </div>
+                    </div>
+
+                </div>
+                <div id="carteFlavor">
+                    <label for="carteFlavorText">Text de narration : </label><textarea id="carteFlavorText" maxlength="40"></textarea>
+                </div>
+            </div>
+        </div>
+    </article>
+    <div id="carteToPrint">
+        <input type="button" value="Imprimer">
+    </div>
+    <footer>
+        <ul>
+            <li><a href="CGU.html">CGU</a></li>
+            <li><a href="participants.html">Participants</a></li>
+        </ul>
+    </footer>
+    <script src="./assets/JS/jquery-3.7.1.min.js"></script>
+    <script src="./assets/JS/main.js"></script>
+</body>
