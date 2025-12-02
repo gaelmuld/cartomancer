@@ -27,7 +27,7 @@
                     <div id="inside">
                         <div id="cardIllustration">
                             <div id="propIllustration">
-                                <img src="./assets/Ressources/T_MetalDemonIconBgLess.png" alt="">
+                                <img src="" alt="">
                             </div>
                         </div>
                         <div id="cardValues">
@@ -39,23 +39,23 @@
                             <div class="field" id="cardInfo3"></div>
                             <div class="field" id="cardInfo4"></div>
                         </div>
-                        <div id="cardText" class="fontMonsterAttack">
+                        <div id="cardText" class="fontMonsterAttack descriptionAtk">
                             <div id="atk1">
-                                <span id="atk1Icone"></span>
+                                <span id="atk1Icone"><img src="" alt=""></span>
                                 <span id="atk1Name"></span>
                                 <span id="atk1Power"></span>
                                 <span id="atk1Mana"></span>
                                 <span id="atk1Desc"></span>
                             </div>
-                            <div id="atk2">
-                                <span id="atk2Icone"></span>
+                            <div id="atk2" class="fontMonsterAttack descriptionAtk">
+                                <span id="atk2Icone"><img src="" alt=""></span>
                                 <span id="atk2Name"></span>
                                 <span id="atk2Power"></span>
                                 <span id="atk2Mana"></span>
                                 <span id="atk2Desc"></span>
                             </div>
-                            <div id="atk3">
-                                <span id="atk3Icone"></span>
+                            <div id="atk3" class="fontMonsterAttack descriptionAtk">
+                                <span id="atk3Icone"><img src="" alt=""></span>
                                 <span id="atk3Name"></span>
                                 <span id="atk3Power"></span>
                                 <span id="atk3Mana"></span>
@@ -78,10 +78,10 @@
                         </select>
                     </div>
                     <div id="filellustrationOptionBox">
-                        <select name="" id="" class="fileOptionSelected1">
-                            <option value="">choixA</option>
-                            <option value="">choixB</option>
-                            <option value="">choixC</option>
+                        <select name="" id="IllustrationValue" class="fileOptionSelected1">
+                            <option value="./assets/Ressources/lizard.png">choixA</option>
+                            <option value="./assets/Ressources/manette.png">choixB</option>
+                            <option value="./assets/Ressources/T_MetalDemonIconBgLess.png">choixC</option>
                             <option value="">choixD</option>
                             <option value="">choixE</option>
                         </select>
@@ -108,6 +108,25 @@
                     <input type="number" name="" id="carteManaVal" value="0">
                 </div>
             </div>
+            <div id="cartePosition">
+                <div id="centrageOption"><label for="">Centrage</label>
+                <div><span>Centré</span><input type="radio" name="centrage" value="0"></div>
+                <div><span>Manuel</span><input type="radio" name="centrage" value="1"></div>
+                    <div id="manualPositionOption">
+                        <div>
+                            <label for="">Déplacement horizontal : <label for="" id="horizontalValue">0%</label></label>
+                            <input type="range" name="" id="horizontalRange" min="-100" max="40" value="0">
+                        </div>
+                        <div>
+                            <label for="">Déplacement vertical : <label for="" id="verticalValue">0%</label></label>
+                            <input type="range" name="" id="verticalRange" min="-100" max="30"  value="0">
+                        </div>
+                    </div>
+                </div>
+                <label for="">Flip X<input type="checkbox" id="flipValue"></label>
+                <label for="">Rotation : <span id="rotaValue">0°</span>  <input type="range" name="" id="rotateRange" min="-180" max="180"></label>
+                <label for="">Echelle : <span id="scaleValue">1</span> <input type="range" name="" id="scaleRange" min="0.2" max="10" step="0.1"></label>
+            </div>
             <div id="carteAtk1Info">
                 <div id="atk1Illu">
                     <label for="">ChoixIcone :</label>
@@ -119,12 +138,13 @@
                         </select>
                     </div>
                     <div id="Atk1OptionBox">
-                        <select name="" id="" class="fileOptionSelected1">
-                            <option value="">choixA</option>
-                            <option value="">choixB</option>
-                            <option value="">choixC</option>
-                            <option value="">choixD</option>
-                            <option value="">choixE</option>
+                        <select name="" id="atk1IconeValue" class="fileOptionSelected1">
+                            <option value="./assets/Ressources/Icone/PoisonCapacity.png">choixA</option>
+                            <option value="./assets/Ressources/Icone/PunchCapacity.png">choixB</option>
+                            <option value="./assets/Ressources/Icone/ShieldCapacity.png">choixC</option>
+                            <option value="./assets/Ressources/Icone/ThunderCapacity.png">choixD</option>
+                            <option value="./assets/Ressources/Icone/TntCapacity.png">choixE</option>
+                            <option value="./assets/Ressources/Icone/UndeadCapacity.png">choixF</option>
                         </select>
                         <div class="fileOptionSelected2">
                             <input type="file" name="" id="atk1Import">
@@ -157,12 +177,13 @@
                     </div>
 
                     <div id="atk2OptionBox">
-                        <select name="" id="" class="fileOptionSelected1">
-                            <option value="">choixA</option>
-                            <option value="">choixB</option>
-                            <option value="">choixC</option>
-                            <option value="">choixD</option>
-                            <option value="">choixE</option>
+                        <select name="" id="atk2IconeValue" class="fileOptionSelected1">
+                            <option value="./assets/Ressources/Icone/PoisonCapacity.png">choixA</option>
+                            <option value="./assets/Ressources/Icone/PunchCapacity.png">choixB</option>
+                            <option value="./assets/Ressources/Icone/ShieldCapacity.png">choixC</option>
+                            <option value="./assets/Ressources/Icone/ThunderCapacity.png">choixD</option>
+                            <option value="./assets/Ressources/Icone/TntCapacity.png">choixE</option>
+                            <option value="./assets/Ressources/Icone/UndeadCapacity.png">choixF</option>
                         </select>
                         <div class="fileOptionSelected2">
                             <input type="file" name="" id="atk2Import">
@@ -194,12 +215,13 @@
                         </select>
                     </div>
                     <div id="atk3OptionBox">
-                        <select name="" id="" class="fileOptionSelected1">
-                            <option value="">choixA</option>
-                            <option value="">choixB</option>
-                            <option value="">choixC</option>
-                            <option value="">choixD</option>
-                            <option value="">choixE</option>
+                        <select name="" id="atk3IconeValue" class="fileOptionSelected1">
+                            <option value="./assets/Ressources/Icone/PoisonCapacity.png">choixA</option>
+                            <option value="./assets/Ressources/Icone/PunchCapacity.png">choixB</option>
+                            <option value="./assets/Ressources/Icone/ShieldCapacity.png">choixC</option>
+                            <option value="./assets/Ressources/Icone/ThunderCapacity.png">choixD</option>
+                            <option value="./assets/Ressources/Icone/TntCapacity.png">choixE</option>
+                            <option value="./assets/Ressources/Icone/UndeadCapacity.png">choixF</option>
                         </select>
                         <div class="fileOptionSelected2">
                             <input type="file" name="" id="atk3Import">
@@ -257,10 +279,10 @@
                     </div>
 
                     <div id="bgOptionBox">
-                        <select name="" id="" class="fileOptionSelected1">
-                            <option value="">choixA</option>
-                            <option value="">choixB</option>
-                            <option value="">choixC</option>
+                        <select name="" id="bgValue" class="fileOptionSelected1">
+                            <option value="./assets/Ressources/DumbBg.png">choixA</option>
+                            <option value="./assets/Ressources/images.jpeg">choixB</option>
+                            <option value="./assets/Ressources/Mecanique_Hybride2.png">choixC</option>
                             <option value="">choixD</option>
                             <option value="">choixE</option>
                         </select>

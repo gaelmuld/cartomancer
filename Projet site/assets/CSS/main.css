@@ -71,7 +71,7 @@ label {
 
 select,
 input[type="file"],
-img {
+option img {
     background-color: #fee;
     color: var(--primary2) !important;
     border-color: var(--primary2) !important;
@@ -100,6 +100,25 @@ select {
     padding: 10px;
     border-radius: var(--borderRadius);
 
+}
+
+#cartePosition {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#cartePosition #centrageOption {
+    grid-row-end: 3;
+}
+
+#cartePosition #centrageOption #manualPositionOption {
+    display: flex;
+}
+
+
+#cartePosition span {
+    display: inline-block;
+    width: 20px;
 }
 
 #options>#carteBase {
@@ -270,12 +289,37 @@ footer>ul>li {
 }
 
 
-#cardTitre>h3 {}
+#cardTitre>h3 {
+    text-align: center;
+}
 
 #cardInfo1 {
     right: calc(var(--borderWidth) / 2 + 12%);
     top: calc(var(--borderWidth) / 2);
     outline-color: red;
+}
+
+.descriptionAtk img {
+    width: 33px;
+}
+
+.descriptionAtk>div span:nth-of-type(2) {
+    font-size: 1.5em;
+}
+
+.descriptionAtk>div span:nth-of-type(3) {
+    margin: 0 3%;
+}
+
+.descriptionAtk>div span:nth-of-type(4) {
+    margin: 0 3%;
+}
+
+.descriptionAtk>div span:nth-of-type(5) {
+    margin: 0 3%;
+    grid-row: 2;
+    grid-column-start: 1;
+    grid-column-end: 5;
 }
 
 #cardInfo2 {
@@ -307,19 +351,17 @@ footer>ul>li {
     z-index: 100;
     position: relative;
     top: -70px;
-    text-align: center;
     border-radius: var(--borderRadius);
     outline: 7px dotted rgb(94, 19, 32);
     display: grid;
     align-items: center;
-    justify-content: center;
 }
 
 #cardText>div {
     outline: 4px solid slateblue;
-    height: 25%;
-    width: 90%;
-    margin: 5%;
+    height: 30%;
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr 1fr;
 }
 
 #imgPropOverview {
@@ -330,14 +372,15 @@ footer>ul>li {
     width: 50px;
     position: relative;
     z-index: 0;
-    top: 50px;
-    left: 50px;
-    transform-origin: center;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+    transform-origin: center center;
 }
 
 #propIllustration img {
     width: 100%;
     position: relative;
+    z-index: 101;
 }
 
 .fontSiteTitle {

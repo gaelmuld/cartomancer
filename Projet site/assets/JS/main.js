@@ -147,6 +147,13 @@ for (let i = 1; i <= 3; i++) {
   })
 }
 
+//if ($("atk" + i + "IcoOption").value()) { }
+for (let i = 1; i <= 3; i++) {
+  $("#atk" + i + "IconeValue").on("input", function () {
+    $("#atk"+i+"Icone>img").attr("src",$(this).val())
+  })
+}
+
 /*FlavorText*/
 var flavorText
 $("#cardInfo4").text($("#carteFlavorText").val())
@@ -209,13 +216,12 @@ $("#numberOption").on("input", function () {
     }
 })
 /**
- * Code pour inclure une image d'illustration
+ * Code pour inclure une image d'arrière plan'
  */
-$("#illustration").on("input", function () {
-  let value = $("#illustration").val()
-  cl(value)
+$("#bgValue").on("input", function () {
+  let value = $("#bgValue").val()
   if (value) {
-    $("#cardIllustration").css("background-image", "url('./assets/Ressources/" + value + "')");
+    $("#cardIllustration").css("background-image", "url('" + value + "')");
   } else {
     $("#cardIllustration").css("background-image", "none");
   }
@@ -224,6 +230,27 @@ $("#illustration").on("input", function () {
  * de/affichage du prop et de ses options
  * [DEBUG] mettre tout en relative
  */
+$("#illustrationOption").on('click', function () {
+  if ($(this).val() == 0) {
+    $("#propIllustration").hide()
+    $("#cartePosition").hide()
+  }
+  else {
+    $("#propIllustration").show()
+    $("#cartePosition").show()
+  }
+})
+
+/* Choix du props à afficher*/
+$("#IllustrationValue").on("input", function () {
+  let value = $(this).val()
+  if (value) {
+    $("#propIllustration>img").attr("src",  value );
+  } else {
+    $("#propIllustration>img").attr("src", "");
+  }
+})
+
 $("#placeProp").on("click", function () {
   if (this.checked) {
     $("#propIllustration").css("display", "block")
@@ -234,22 +261,53 @@ $("#placeProp").on("click", function () {
     $("#displacement").css("display", "none")
   }
 })
+
+//Centrage
+$("#manualPositionOption").hide();
+$("input[name='centrage']").on('input', function () {
+  if ($(this).val()==1) {
+    $("#manualPositionOption").show()
+  }
+  else {
+    $("#manualPositionOption").hide();
+    $("#propIllustration").css("left", "calc(50% - "+25*scale+"px)")
+    $("#propIllustration").css("top", "calc(50% - "+25*scale+"px)")
+  }
+});
 //horizontal
+$("#propIllustration").css("left", "calc(50%)")
 $("#horizontalRange").on("input", function () {
-  $("#propIllustration").css("left", "calc(50% + "+$("#horizontalRange").val()+"%)")
+  $("#propIllustration").css("left", "calc(50% + " + $(this).val() + "%")
+  $("#horizontalValue").html($(this).val()+"");
 })
+
 //vertical
+$("#propIllustration").css("top", "calc(50%)")
 $("#verticalRange").on("input", function () {
-  $("#propIllustration").css("top", "calc(50% + "+$("#verticalRange").val()+"%)")
+  $("#propIllustration").css("top", "calc(50% + " + $(this).val() + "%")
+  $("#verticalValue").html($(this).val()+"");
 })
+
+//flip
+$("#flipValue").on("input", function () {
+  $("#propIllustration>img").css("transform", "scale(" + (1 - 2 * $(this).is(":checked") )+ ", 1)")
+})
+
 //scale
+var scale=1
 $("#scaleRange").on("input", function () {
   $("#propIllustration").css("width", ($("#scaleRange").val()*50) + "px")
+  $("#scaleValue").html("X" + $(this).val());
+  scale = $(this).val()
 })
+
 //rotate
-$("#rotateValue").on("input", function () {
-  $("#propIllustration").css("transform", "rotate(" + $("#rotateValue").val()+"deg)")
-  })
+$("#rotateRange").on("input", function () {
+  $("#propIllustration").css("transform", "rotate(" + $("#rotateRange").val() + "deg)")
+  $("#rotaValue").html($(this).val() + "°");
+})
+  
+
   /**
    * DEBUG Mode
   */
