@@ -346,6 +346,10 @@ $("#debugMode").on("click", function () {
     "attack": [Attack,""],
     "mana": [Mana,""],
     "illustration": [Illus,"required"],
+    "scale": [Scale, "required"]
+    "positionX": [PosX, "required"]
+    "positionY": [PosY, "required"]
+    "rotation": [Rot, "required"]
     "border": [Border,"required"],
     "background": [Bg,"required"],
     "cardBackground": [CardBg,"required"],
@@ -382,4 +386,5 @@ $("#debugMode").on("click", function () {
 
 //**
 // Base64 -> Image
+
 //  *
