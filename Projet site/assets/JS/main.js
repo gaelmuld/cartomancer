@@ -51,34 +51,6 @@ $("#carteNameVal").on("input", function () {
   Titre = $("#carteNameVal").val()
   values = saveValues()
 });
-
-$("#illustration").on("input", function () {
-  let value = $("#illustration").val()
-  cl(value)
-  if (value) {
-    $("#cardIllustration").css("background-image", "url('./assets/Ressources/" + value + "')");
-  } else {
-    $("#cardIllustration").css("background-image", "none");
-  }
-})
-
-/* Upload d'illustration */
-
-const container = document.getElementById("propIllustration");
-
-$("#illuImport").on("change", function() {
-    const file = this.files[0];
-    const reader = new FileReader();
-
-    reader.onload = function() {
-      base64 = reader.result
-
-      container.innerHTML = `<img src="${base64}" alt="Illustration" />`;
-    };
-
-    reader.readAsDataURL(file);
-});
-
 /*HP*/
 var Hp
 $("#cardInfo1").text($("#carteHpVal").val())
@@ -124,25 +96,38 @@ $("#carteNbAtkVal").on("input", function () {
     values = saveValues()
   }
 })
+/* Input radio > choix pour type de dessin  ( rien x choix x importer)*/
+//Initialisation
+$(".optionElement input:radio").each(function(){
+  $(this).parent().parent().next().children(".fileOptionSelected1").hide()
+  $(this).parent().parent().next().children(".fileOptionSelected2").hide()
+})
+//logique
+$(".optionElement input:radio").each(function(){
+  $(this).change(function(){
+    if($(this).val()==0){
+      $(this).parent().parent().next().children(".fileOptionSelected1").hide()
+      $(this).parent().parent().next().children(".fileOptionSelected2").hide()
+    }
+      $(this).parent().parent().next().children(".fileOptionSelected"+$(this).val()).show()
+      $(this).parent().parent().next().children(".fileOptionSelected"+(3-$(this).val())).hide()
+    })
+})
 
-/* Affichage des inputs par inputs */
-$(".fileOptionSelection").each(function (i) {
-  let $_this =$(this)
-  $_this.parent().next().hide()
-  $_this.on("input", function () {
-    $_this.parent().next().show()
-    $_this.parent().next().children(".fileOptionSelected2").hide()
-    $_this.parent().next().children(".fileOptionSelected1").hide()
-    if ($(this).val() == 0) {
-      $_this.parent().next().hide()
-    }
-    if ($(this).val() == 1) {
-      $_this.parent().next().children(".fileOptionSelected1").show()
-    }
-    if ($(this).val() == 2) {
-      $_this.parent().next().children(".fileOptionSelected2").show()
-    }
-  })
+
+/**
+ * de/affichage du prop et de ses options
+ * [DEBUG] mettre tout en relative
+ */
+$("#areaIllustrationBoxOption input:radio").change(function () {
+  if ($(this).val() == 0) {
+    $("#propIllustration").hide()
+    $("#cartePosition").hide()
+  }
+  else {
+    $("#propIllustration").show()
+    $("#cartePosition").show()
+  }
 })
 
 
@@ -244,6 +229,17 @@ $("#numberOption").on("input", function () {
     }
 })
 /**
+ * Code pour inclure une bordure de carte
+ */
+$("#borderValue").on("input", function () {
+  let value = $(this).val()
+  if (value) {
+    $("#card>#inside").css("border-image-source", "url('" + value + "')");
+  } else {
+    $("#card>#inside").css("border-image-source", "none");
+  }
+})
+/**
  * Code pour inclure une image d'arrière plan'
  */
 $("#bgValue").on("input", function () {
@@ -252,20 +248,6 @@ $("#bgValue").on("input", function () {
     $("#cardIllustration").css("background-image", "url('" + value + "')");
   } else {
     $("#cardIllustration").css("background-image", "none");
-  }
-})
-/**
- * de/affichage du prop et de ses options
- * [DEBUG] mettre tout en relative
- */
-$("#illustrationOption").on('click', function () {
-  if ($(this).val() == 0) {
-    $("#propIllustration").hide()
-    $("#cartePosition").hide()
-  }
-  else {
-    $("#propIllustration").show()
-    $("#cartePosition").show()
   }
 })
 
@@ -374,10 +356,6 @@ $("#debugMode").on("click", function () {
     "attack": [Attack,""],
     "mana": [Mana,""],
     "illustration": [Illus,"required"],
-    "scale": [Scale, "required"]
-    "positionX": [PosX, "required"]
-    "positionY": [PosY, "required"]
-    "rotation": [Rot, "required"]
     "border": [Border,"required"],
     "background": [Bg,"required"],
     "cardBackground": [CardBg,"required"],
@@ -414,7 +392,4 @@ $("#debugMode").on("click", function () {
 
 //**
 // Base64 -> Image
-
 //  *
-
-

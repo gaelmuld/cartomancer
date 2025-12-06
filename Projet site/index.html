@@ -71,23 +71,23 @@
                 <div id="carteIllustration">
                     <div id="illustrationBoxOption">
                         <label for="">Illustration</label>
-                        <select name="" id="illustrationOption" class="fileOptionSelection">
-                            <option value="0" selected>Rien</option>
-                            <option value="1">Choix</option>
-                            <option value="2">Importer</option>
-                        </select>
-                    </div>
-                    <div id="filellustrationOptionBox">
-                        <select name="" id="IllustrationValue" class="fileOptionSelected1">
-                            <option value="./assets/Ressources/lizard.png">choixA</option>
-                            <option value="./assets/Ressources/manette.png">choixB</option>
-                            <option value="./assets/Ressources/T_MetalDemonIconBgLess.png">choixC</option>
-                            <option value="">choixD</option>
-                            <option value="">choixE</option>
-                        </select>
-                        <div class="fileOptionSelected2">
-                            <input type="file" name="" id="illuImport">
-                            <img src="" alt="" id="illuVisu" class="previewBox">
+                        <div id="areaIllustrationBoxOption" class="optionElement">
+                            <div><span>Rien</span><input value="0" type="radio" name="choixIllustration" checked></div>
+                            <div><span>Choix</span><input value="1" type="radio" name="choixIllustration"></div>
+                            <div><span>Importer</span><input value="2" type="radio" name="choixIllustration"></div>
+                        </div>
+                        <div id="filellustrationOptionBox" class="fileOptionBox">
+                            <select name="" id="IllustrationValue" class="fileOptionSelected1">
+                                <option value="" selected>- - -</option>
+                                <option value="./assets/Ressources/lizard.png">choixA</option>
+                                <option value="./assets/Ressources/manette.png">choixB</option>
+                                <option value="./assets/Ressources/T_MetalDemonIconBgLess.png">choixC</option>
+                                <option value="">choixD</option>
+                                <option value="">choixE</option>
+                            </select>
+                            <div class="fileOptionSelected2">
+                                <input type="file" name="" id="illuImport">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -127,18 +127,17 @@
                 <label for="">Rotation : <span id="rotaValue">0°</span>  <input type="range" name="" id="rotateRange" min="-180" max="180"></label>
                 <label for="">Echelle : <span id="scaleValue">1</span> <input type="range" name="" id="scaleRange" min="0.2" max="10" step="0.1"></label>
             </div>
-            <div id="carteAtk1Info">
+            <div id="carteAtk1Info" class="carteAtk">
                 <div id="atk1Illu">
                     <label for="">ChoixIcone :</label>
-                    <div id="atk1InfoBoxOption">
-                        <select name="" id="atk1IcoOption" class="fileOptionSelection">
-                            <option value="0" selected>Rien</option>
-                            <option value="1">Choix</option>
-                            <option value="2">Importer</option>
-                        </select>
+                    <div id="areaAtk1BoxOption"class="optionElement">
+                        <div><span>Rien</span><input value="0" type="radio" name="choixAtk1" checked></div>
+                        <div><span>Choix</span><input value="1" type="radio" name="choixAtk1"></div>
+                        <div><span>Importer</span><input value="2" type="radio" name="choixAtk1"></div>
                     </div>
-                    <div id="Atk1OptionBox">
+                    <div id="Atk1OptionBox" class="fileOptionBox">
                         <select name="" id="atk1IconeValue" class="fileOptionSelected1">
+                            <option value="" selected>- - -</option>
                             <option value="./assets/Ressources/Icone/PoisonCapacity.png">choixA</option>
                             <option value="./assets/Ressources/Icone/PunchCapacity.png">choixB</option>
                             <option value="./assets/Ressources/Icone/ShieldCapacity.png">choixC</option>
@@ -148,7 +147,6 @@
                         </select>
                         <div class="fileOptionSelected2">
                             <input type="file" name="" id="atk1Import">
-                            <img src="" alt="" id="atk1Visu" class="previewBox">
                         </div>
                     </div>
                 </div>
@@ -166,18 +164,18 @@
                 </div>
                 <textarea name="" id="atkDesc1Val" placeholder="description de l'attaque" maxlength="40"></textarea>
             </div>
-            <div id="carteAtk2Info">
-                <div id="atk2Illu"><label for="">ChoixIcone :</label>
-                    <div id="atk2InfoBoxOption">
-                        <select name="" id="atk2IcoOption" class="fileOptionSelection">
-                            <option value="0" selected>Rien</option>
-                            <option value="1">Choix</option>
-                            <option value="2">Importer</option>
-                        </select>
+            <div id="carteAtk2Info" class="carteAtk">
+                <div id="atk2Illu">
+                    <label for="">ChoixIcone :</label>
+                    <div id="areaAtk2BoxOption"class="optionElement">
+                        <div><span>Rien</span><input value="0" type="radio" name="choixAtk2" checked></div>
+                        <div><span>Choix</span><input value="1" type="radio" name="choixAtk2"></div>
+                        <div><span>Importer</span><input value="2" type="radio" name="choixAtk2"></div>
                     </div>
 
-                    <div id="atk2OptionBox">
+                    <div id="atk2OptionBox" class="fileOptionBox">
                         <select name="" id="atk2IconeValue" class="fileOptionSelected1">
+                            <option value="" selected>- - -</option>
                             <option value="./assets/Ressources/Icone/PoisonCapacity.png">choixA</option>
                             <option value="./assets/Ressources/Icone/PunchCapacity.png">choixB</option>
                             <option value="./assets/Ressources/Icone/ShieldCapacity.png">choixC</option>
@@ -187,7 +185,6 @@
                         </select>
                         <div class="fileOptionSelected2">
                             <input type="file" name="" id="atk2Import">
-                            <img src="" alt="" id="atk2Visu" class="previewBox">
                         </div>
                     </div>
                 </div>
@@ -205,17 +202,17 @@
                 </div>
                 <textarea name="" id="atkDesc2Val" placeholder="description de l'attaque" maxlength="40"></textarea>
             </div>
-            <div id="carteAtk3Info">
-                <div id="atk3Illu"><label for="">ChoixIcone :</label>
-                    <div id="atk3InfoBoxOption">
-                        <select name="" id="atk3IcoOption" class="fileOptionSelection">
-                            <option value="0" selected>Rien</option>
-                            <option value="1">Choix</option>
-                            <option value="2">Importer</option>
-                        </select>
+            <div id="carteAtk3Info" class="carteAtk">
+                <div id="atk3Illu">
+                    <label for="">ChoixIcone :</label>
+                    <div id="areaAtk3BoxOption"class="optionElement">
+                        <div><span>Rien</span><input value="0" type="radio" name="choixAtk3" checked></div>
+                        <div><span>Choix</span><input value="1" type="radio" name="choixAtk3"></div>
+                        <div><span>Importer</span><input value="2" type="radio" name="choixAtk3"></div>
                     </div>
-                    <div id="atk3OptionBox">
+                    <div id="atk3OptionBox" class="fileOptionBox">
                         <select name="" id="atk3IconeValue" class="fileOptionSelected1">
+                            <option value="" selected>- - -</option>
                             <option value="./assets/Ressources/Icone/PoisonCapacity.png">choixA</option>
                             <option value="./assets/Ressources/Icone/PunchCapacity.png">choixB</option>
                             <option value="./assets/Ressources/Icone/ShieldCapacity.png">choixC</option>
@@ -225,7 +222,6 @@
                         </select>
                         <div class="fileOptionSelected2">
                             <input type="file" name="" id="atk3Import">
-                            <img src="" alt="" id="atk3Visu" class="previewBox">
                         </div>
                     </div>
                 </div>
@@ -246,40 +242,36 @@
             <div id="carteComplement">
                 <div id="carteBorder">
                     <label for="">Choix de la bordure : </label>
-                    <div id="borderInfoBoxOption">
-                        <select name="" id="illustrationOption" class="fileOptionSelection">
-                            <option value="0" selected>Rien</option>
-                            <option value="1">Choix</option>
-                            <option value="2">Importer</option>
-                        </select>
+                    <div id="areaBorderBoxOption" class="optionElement">
+                        <div><span>Rien</span><input value="0" type="radio" name="choixBorder" checked></div>
+                        <div><span>Choix</span><input value="1" type="radio" name="choixBorder"></div>
+                        <div><span>Importer</span><input value="2" type="radio" name="choixBorder"></div>
                     </div>
-                    <div id="borderOptionBox">
-                        <select name="" id="" class="fileOptionSelected1">
-                            <option value="">choixA</option>
-                            <option value="">choixB</option>
+                    <div id="borderOptionBox" class="fileOptionBox">
+                        <select name="" id="borderValue" class="fileOptionSelected1">
+                            <option value="" selected>- - -</option>
+                            <option value="./assets/Ressources/border.png">choixA</option>
+                            <option value="./assets/Ressources/border-image-3.png">choixB</option>
                             <option value="">choixC</option>
                             <option value="">choixD</option>
                             <option value="">choixE</option>
                         </select>
                         <div class="fileOptionSelected2">
                             <input type="file" name="" id="borderImport">
-                            <img src="" alt="" id="borderVisu" class="previewBox">
                         </div>
                     </div>
                 </div>
                 <div id="carteBackground">
                     <label for="">choix de l'arrière plan : </label>
-
-                    <div id="bgInfoBoxOption">
-                        <select name="" id="bgOption" class="fileOptionSelection">
-                            <option value="0" selected>Rien</option>
-                            <option value="1">Choix</option>
-                            <option value="2">Importer</option>
-                        </select>
+                    <div id="areaBgBoxOption"class="optionElement">
+                        <div><span>Rien</span><input value="0" type="radio" name="choixBg" checked></div>
+                        <div><span>Choix</span><input value="1" type="radio" name="choixBg"></div>
+                        <div><span>Importer</span><input value="2" type="radio" name="choixBg"></div>
                     </div>
 
-                    <div id="bgOptionBox">
+                    <div id="bgOptionBox" class="fileOptionBox">
                         <select name="" id="bgValue" class="fileOptionSelected1">
+                            <option value="" selected>- - -</option>
                             <option value="./assets/Ressources/DumbBg.png">choixA</option>
                             <option value="./assets/Ressources/images.jpeg">choixB</option>
                             <option value="./assets/Ressources/Mecanique_Hybride2.png">choixC</option>
@@ -288,7 +280,6 @@
                         </select>
                         <div class="fileOptionSelected2">
                             <input type="file" name="" id="bgImport">
-                            <img src="" alt="" id="bgVisu" class="previewBox">
                         </div>
                     </div>
 

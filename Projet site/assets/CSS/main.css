@@ -3,26 +3,24 @@
     --borderWidth: 30px;
     --primary1: #FA8E46;
     --primary2: #FA4F46;
-    --secondary1: #38ce95;
-    --secondary2: #5F7A73;
-    --tercary1: #7A6A5F;
-    --tercary2: #7A615F;
+    --secondary1: #a8c4ba;
+    --secondary2: #eaf8f4;
     --borderRadius: 5px;
 }
 
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    font-size: 16px;
+    background-color: var(--secondary1);
+    line-height: 1em;
 }
 
 header {
-    background: var(--tercary1);
     border-radius: var(--borderRadius);
     padding: 0px;
     margin: 0;
     text-align: center;
-    height: 100px;
 }
 
 header>* {
@@ -31,16 +29,17 @@ header>* {
 }
 
 article {
+    font-size: 0.5em;
     display: grid;
     grid-template-columns: 2fr 3fr;
     border-radius: var(--borderRadius);
-    height: calc(100vh - 200px);
+    height: 75em;
 }
 
 #cardArea {
-    background: var(--secondary1);
-    border-radius: var(--borderRadius);
+    border-radius: 0;
     padding: 5px;
+    border-right: 2px solid #222;
 }
 
 #cardArea>#wrapperCard {
@@ -59,20 +58,16 @@ input {
 
 label {
     display: block;
-    padding: 2px;
+    padding: 0.5em;
     margin: 5px 0;
-    max-width: 150px;
-    width: 90%;
     border-radius: var(--borderRadius);
-    box-shadow: 0 0 2px 0px #666;
     color: var(--primary1);
-    background-color: #f6efef;
+    font-weight: bold;
 }
 
 select,
 input[type="file"],
 option img {
-    background-color: #fee;
     color: var(--primary2) !important;
     border-color: var(--primary2) !important;
     outline-color: var(--primary2) !important;
@@ -87,19 +82,23 @@ select {
 #options {
     display: grid;
     gap: 10px;
-    background: var(--secondary2);
     border-radius: var(--borderRadius);
     padding: 3%;
     overflow-y: scroll;
+    box-shadow: 0 0 25px 2px inset #3333;
 }
 
 #options>* {
-    background: #fff;
+    background: var(--secondary2);
     display: grid;
-    margin: 10px;
-    padding: 10px;
+    height: 20em;
+    margin:2em;
+    padding: 2em;
     border-radius: var(--borderRadius);
 
+}
+.fileOptionBox{
+    height: 4em;
 }
 
 #cartePosition {
@@ -128,7 +127,19 @@ select {
 
 
 #carteIllustration {
-    grid-row: -1/1;
+    grid-row: 1/3;
+}
+.optionElement>div{
+    display:grid;
+    grid-template-columns: 3fr 1fr 5fr;
+    align-items: center;
+}
+.optionElement>div>input{
+    width: inherit;
+    position: relative;
+    bottom:2px;
+}
+.optionElement>div>span{
 }
 
 .previewBox {
@@ -138,13 +149,19 @@ select {
     outline: 2px solid red;
 }
 
-#carteAtk1Info {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+.carteAtk {
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(3,1fr);
 }
 
-#carteAtk1Info>#atk1Illu {
-    grid-row: 0/2;
+.carteAtk>* {
+    margin:0;
+    margin-bottom: 1em;
+}
+
+
+.carteAtk>div:first-of-type {
+    grid-row: 1/4;
 }
 
 #carteAtk1Info>#atkDesc1Val {
@@ -152,16 +169,6 @@ select {
     width: 95%;
     height: 60px;
     resize: none;
-
-}
-
-#carteAtk2Info {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-}
-
-#carteAtk2Info>#atk2Illu {
-    grid-row: 0/2;
 }
 
 #carteAtk2Info>#atkDesc2Val {
@@ -172,16 +179,7 @@ select {
 
 }
 
-#carteAtk3Info {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-}
-
-#carteAtk3Info>#atk3Illu {
-    grid-row: 0/2;
-}
-
-#carteAtk3Info>#atkDesc3Val {
+#carteAtk3Info>#atk3DescVal {
     grid-column: 2/5;
     width: 95%;
     height: 60px;
@@ -190,7 +188,7 @@ select {
 }
 
 #carteComplement {
-    grid-template-columns: 1fr 1fr 4fr;
+    grid-template-columns: 1fr 1fr 2fr;
 }
 
 textarea {
@@ -199,10 +197,8 @@ textarea {
 }
 
 footer {
-    background: var(--tercary2);
     border-radius: var(--borderRadius);
     padding: 5px;
-    height: 50px;
 }
 
 footer>ul>li {
@@ -210,9 +206,6 @@ footer>ul>li {
     list-style-type: none;
 }
 
-#carteToPrint {
-    height: 50px;
-}
 
 #card {
     width: 100%;
@@ -237,7 +230,7 @@ footer>ul>li {
     position: relative;
     right: calc(var(--borderWidth) / 2);
     bottom: calc(var(--borderWidth) / 2);
-    height: calc(100% + 4* var(--borderRadius));
+    height: calc(100% + 6* var(--borderRadius));
     border-image-source: url("../Ressources/border-image-3.png");
     border-image-width: var(--borderWidth);
     border-image-slice: 40;
@@ -347,7 +340,7 @@ footer>ul>li {
     width: calc(100% - var(--borderWidth));
     height: 25%;
     margin: 5%;
-    font-size: 0.55em;
+    font-size: 0.5em;
     z-index: 100;
     position: relative;
     top: -70px;
@@ -387,11 +380,12 @@ footer>ul>li {
     font-family: "espiritu", sans-serif;
     font-weight: 400;
     font-style: normal;
+    font-size: 3em;
 
 }
 
 .fontMonsterTitle {
-    font-size: 1.3em;
+    font-size: 2em;
     font-family: "obliqua", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -401,5 +395,6 @@ footer>ul>li {
     font-family: "Goblin One", serif;
     font-weight: 400;
     font-style: normal;
+    font-size: 1em;
 
 }
