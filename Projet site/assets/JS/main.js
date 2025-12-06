@@ -51,6 +51,45 @@ $("#carteNameVal").on("input", function () {
   Titre = $("#carteNameVal").val()
   values = saveValues()
 });
+
+$("#illustration").on("input", function () {
+  let value = $("#illustration").val()
+  cl(value)
+  if (value) {
+    $("#cardIllustration").css("background-image", "url('./assets/Ressources/" + value + "')");
+  } else {
+    $("#cardIllustration").css("background-image", "none");
+  }
+})
+
+/* Upload d'illustration */
+$("#illustration").on("input", function () {
+  let value = $("#illustration").val()
+  cl(value)
+  if (value) {
+    $("#cardIllustration").css("background-image", "url('./assets/Ressources/" + value + "')");
+  } else {
+    $("#cardIllustration").css("background-image", "none");
+  }
+})
+
+const container = document.getElementById("cardIllustration");
+
+$("#illuImport").on("change", function() {
+    const file = this.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function() {
+      console.log(reader.result);
+
+      base64 = reader.result
+
+      container.innerHTML = `<img src="${base64}" alt="Illustration" />`;
+    };
+
+    reader.readAsDataURL(file);
+});
+
 /*HP*/
 var Hp
 $("#cardInfo1").text($("#carteHpVal").val())
@@ -388,3 +427,4 @@ $("#debugMode").on("click", function () {
 // Base64 -> Image
 
 //  *
+
