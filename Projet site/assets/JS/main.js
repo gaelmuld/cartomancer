@@ -63,25 +63,14 @@ $("#illustration").on("input", function () {
 })
 
 /* Upload d'illustration */
-$("#illustration").on("input", function () {
-  let value = $("#illustration").val()
-  cl(value)
-  if (value) {
-    $("#cardIllustration").css("background-image", "url('./assets/Ressources/" + value + "')");
-  } else {
-    $("#cardIllustration").css("background-image", "none");
-  }
-})
 
-const container = document.getElementById("cardIllustration");
+const container = document.getElementById("propIllustration");
 
 $("#illuImport").on("change", function() {
     const file = this.files[0];
     const reader = new FileReader();
 
     reader.onload = function() {
-      console.log(reader.result);
-
       base64 = reader.result
 
       container.innerHTML = `<img src="${base64}" alt="Illustration" />`;
@@ -427,4 +416,5 @@ $("#debugMode").on("click", function () {
 // Base64 -> Image
 
 //  *
+
 
