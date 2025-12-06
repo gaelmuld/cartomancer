@@ -114,6 +114,23 @@ $(".optionElement input:radio").each(function(){
     })
 })
 
+//upload image
+
+const container = document.getElementById("propIllustration");
+
+$("#illuImport").on("change", function() {
+    const file = this.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function() {
+      base64 = reader.result
+
+      container.innerHTML = `<img src="${base64}" alt="Illustration" />`;
+    };
+
+    reader.readAsDataURL(file);
+});
+
 
 /**
  * de/affichage du prop et de ses options
@@ -392,4 +409,5 @@ $("#debugMode").on("click", function () {
 
 //**
 // Base64 -> Image
+
 //  *
