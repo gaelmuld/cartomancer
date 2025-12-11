@@ -1,6 +1,7 @@
 /* input: pour un appel au coup par coup
     change: pour un appel une fois le focus fini
 */
+
 function cl(...el) {
   return console.log(...el)
 }
@@ -116,12 +117,11 @@ $(".optionElement input:radio").each(function(){
 
 //upload image
 
-const container = document.getElementById("propIllustration");
-
 $("#illuImport").on("change", function() {
     const file = this.files[0];
     const reader = new FileReader();
-
+	const container = document.getElementById("propIllustration");
+	
     reader.onload = function() {
       base64 = reader.result
 
@@ -131,11 +131,25 @@ $("#illuImport").on("change", function() {
     reader.readAsDataURL(file);
 });
 
+$("#bgImport").on("change", function() {
+    const file = this.files[0];
+    const reader = new FileReader();
+	const container = $("#cardIllustration");
+	
+    reader.onload = function() {
+      base64 = reader.result
+
+      container.css("background-image", "url("+base64+")");
+    };
+
+    reader.readAsDataURL(file);
+});
 
 /**
  * de/affichage du prop et de ses options
  * [DEBUG] mettre tout en relative
  */
+
 $("#areaIllustrationBoxOption input:radio").change(function () {
   if ($(this).val() == 0) {
     $("#propIllustration").hide()
@@ -359,6 +373,7 @@ $("#debugMode").on("click", function () {
      $("#cardText").css("outline-width", "0px")
      $("#cardText>div").css("outline-width", "0px")
      $("#cardValues").css("outline-width", "0px")
+
 /** 
  * Structure JSON d'une carte
  */

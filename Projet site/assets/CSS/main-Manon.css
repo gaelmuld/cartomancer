@@ -79,10 +79,6 @@ select {
     margin: 5px 0;
 }
 
-#cardInfo1 {
-    background-image: url("./Ressources/health_icon.png");
-}
-
 #options {
     display: grid;
     gap: 10px;
@@ -330,7 +326,7 @@ footer>ul>li {
     bottom: calc(var(--borderWidth) / 2);
     outline-color: purple;
 }
-
+/*Retravaillé par Manon*/
 #cardInfo4 {
     width: 40%;
     text-align: center;
