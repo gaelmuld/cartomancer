@@ -426,3 +426,24 @@ $("#debugMode").on("click", function () {
 // Base64 -> Image
 
 //  *
+
+
+/**
+ * printToComputer
+ * Faire un enregistrement sur le PC de la carte créée
+ */
+const download = () => {
+	html2canvas(document.querySelector('#card')).then(
+		canvas => {document.body.appendChild(canvas);}
+	);
+}
+
+$("#printToComputer").on("click", function () {
+	download()
+	let link = document.createElement('a');
+	link.download = 'screenshot.png';
+	link.href = canvas.toDataURL('image/png');
+	link.click();
+})
+
+

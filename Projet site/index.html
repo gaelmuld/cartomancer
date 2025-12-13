@@ -16,7 +16,6 @@
 <body>
     <header>
         <h1 class="fontSiteTitle">Créateur de cartes</h1>
-        <p id="credits">Par ... / ... / ... / ... et ...</p>
     </header>
     <article>
         <div id="cardArea">
@@ -39,21 +38,20 @@
                             <div class="field" id="cardInfo3"></div>
                             <div class="field" id="cardInfo4"></div>
                         </div>
-                        <div id="cardText" class="fontMonsterAttack descriptionAtk">
-                            <div id="atk1">
-                                <span id="atk1Icone"><img src="" alt=""></span>
-                                <span id="atk1Name"></span>
-                                <span id="atk1Power"></span>
-                                <span id="atk1Mana"></span>
-                                <span id="atk1Desc"></span>
-                            </div>
-                            <div id="atk2" class="fontMonsterAttack descriptionAtk">
-                                <span id="atk2Icone"><img src="" alt=""></span>
-                                <span id="atk2Name"></span>
-                                <span id="atk2Power"></span>
-                                <span id="atk2Mana"></span>
-                                <span id="atk2Desc"></span>
-                            </div>
+                        <div id="cardText">
+							<div id="atk1" class="fontMonsterAttack descriptionAtk">
+								<span id="atk1Icone"><img src="" alt=""></span>
+								<span id="atk1Name"></span>
+								<span id="atk1Power"></span>
+								<span id="atk1Mana"></span>
+								<span id="atk1Desc"></span>
+							</div><div id="atk2" class="fontMonsterAttack descriptionAtk">
+								<span id="atk2Icone"><img src="" alt=""></span>
+								<span id="atk2Name"></span>
+								<span id="atk2Power"></span>
+								<span id="atk2Mana"></span>
+								<span id="atk2Desc"></span>
+							</div>
                             <div id="atk3" class="fontMonsterAttack descriptionAtk">
                                 <span id="atk3Icone"><img src="" alt=""></span>
                                 <span id="atk3Name"></span>
@@ -72,13 +70,12 @@
                     <div id="illustrationBoxOption">
                         <label for="">Illustration</label>
                         <div id="areaIllustrationBoxOption" class="optionElement">
-                            <div><span>Rien</span><input value="0" type="radio" name="choixIllustration" checked></div>
-                            <div><span>Choix</span><input value="1" type="radio" name="choixIllustration"></div>
+                            <div><span>Choix</span><input value="1" type="radio" selected name="choixIllustration"></div>
                             <div><span>Importer</span><input value="2" type="radio" name="choixIllustration"></div>
                         </div>
                         <div id="filellustrationOptionBox" class="fileOptionBox">
                             <select name="" id="IllustrationValue" class="fileOptionSelected1">
-                                <option value="" selected>- - -</option>
+                                <option  value="" selected>- - -</option>
                                 <option value="./assets/Ressources/lizard.png">choixA</option>
                                 <option value="./assets/Ressources/manette.png">choixB</option>
                                 <option value="./assets/Ressources/T_MetalDemonIconBgLess.png">choixC</option>
@@ -93,7 +90,7 @@
                 </div>
                 <div id="carteName">
                     <label for="carteNameVal">Nom de la carte : </label><input type="text" name="" id="carteNameVal"
-                        placeholder="Nom de la carte" maxlength="20">
+                        placeholder="Nom de la carte" maxlength="40" title="max 40 caractères">
                 </div>
                 <div id="carteNbAtk">
                     <label for="carteNbAtkVal">Nombre d'attaque : </label>
@@ -104,7 +101,7 @@
                     <input type="number" name="" id="carteHpVal" value="0">
                 </div>
                 <div id="carteMana">
-                    <label for="carteNbAtkVal">Nombre de Mana : </label>
+                    <label for="carteNbAtkVal">Coût en Mana : </label>
                     <input type="number" name="" id="carteManaVal" value="0">
                 </div>
             </div>
@@ -115,7 +112,7 @@
                     <div id="manualPositionOption">
                         <div>
                             <label for="">Déplacement horizontal : <label for="" id="horizontalValue">0%</label></label>
-                            <input type="range" name="" id="horizontalRange" min="-100" max="40" value="0">
+                            <input type="range" name="" id="horizontalRange" min="-100" maxlength="20"value="0">
                         </div>
                         <div>
                             <label for="">Déplacement vertical : <label for="" id="verticalValue">0%</label></label>
@@ -130,11 +127,6 @@
             <div id="carteAtk1Info" class="carteAtk">
                 <div id="atk1Illu">
                     <label for="">ChoixIcone :</label>
-                    <div id="areaAtk1BoxOption"class="optionElement">
-                        <div><span>Rien</span><input value="0" type="radio" name="choixAtk1" checked></div>
-                        <div><span>Choix</span><input value="1" type="radio" name="choixAtk1"></div>
-                        <div><span>Importer</span><input value="2" type="radio" name="choixAtk1"></div>
-                    </div>
                     <div id="Atk1OptionBox" class="fileOptionBox">
                         <select name="" id="atk1IconeValue" class="fileOptionSelected1">
                             <option value="" selected>- - -</option>
@@ -145,14 +137,11 @@
                             <option value="./assets/Ressources/Icone/TntCapacity.png">choixE</option>
                             <option value="./assets/Ressources/Icone/UndeadCapacity.png">choixF</option>
                         </select>
-                        <div class="fileOptionSelected2">
-                            <input type="file" name="" id="atk1Import">
-                        </div>
                     </div>
                 </div>
                 <div id="atkName1">
                     <label for="">Nom de l'attaque</label>
-                    <input type="text" name="" id="atkName1Val" placeholder="nom de l'attaque">
+                    <input type="text" name="" id="atkName1Val" placeholder="nom de l'attaque" maxlength="20"title="Maximum 40 caractères">
                 </div>
                 <div id="atkDmg1">
                     <label for="">Puissance d'attaque</label>
@@ -162,17 +151,11 @@
                     <label for="">Coût Mana</label>
                     <input type="number" name="" id="atkMana1Val" value="0">
                 </div>
-                <textarea name="" id="atkDesc1Val" placeholder="description de l'attaque" maxlength="80"></textarea>
+                <textarea name="" id="atkDesc1Val" placeholder="description de l'attaque" maxlength="100" title="Maximum 100 caractères"></textarea>
             </div>
             <div id="carteAtk2Info" class="carteAtk">
                 <div id="atk2Illu">
                     <label for="">ChoixIcone :</label>
-                    <div id="areaAtk2BoxOption"class="optionElement">
-                        <div><span>Rien</span><input value="0" type="radio" name="choixAtk2" checked></div>
-                        <div><span>Choix</span><input value="1" type="radio" name="choixAtk2"></div>
-                        <div><span>Importer</span><input value="2" type="radio" name="choixAtk2"></div>
-                    </div>
-
                     <div id="atk2OptionBox" class="fileOptionBox">
                         <select name="" id="atk2IconeValue" class="fileOptionSelected1">
                             <option value="" selected>- - -</option>
@@ -183,14 +166,11 @@
                             <option value="./assets/Ressources/Icone/TntCapacity.png">choixE</option>
                             <option value="./assets/Ressources/Icone/UndeadCapacity.png">choixF</option>
                         </select>
-                        <div class="fileOptionSelected2">
-                            <input type="file" name="" id="atk2Import">
-                        </div>
                     </div>
                 </div>
                 <div id="atkName2">
                     <label for="">Nom de l'attaque</label>
-                    <input type="text" name="" id="atkName2Val" placeholder="nom de l'attaque">
+                    <input type="text" name="" id="atkName2Val" placeholder="nom de l'attaque" maxlength="20"title="Maximum 40 caractères">
                 </div>
                 <div id="atkDmg2">
                     <label for="">Puissance d'attaque</label>
@@ -200,16 +180,11 @@
                     <label for="">Coût Mana</label>
                     <input type="number" name="" id="atkMana2Val" value="0">
                 </div>
-                <textarea name="" id="atkDesc2Val" placeholder="description de l'attaque" maxlength="80"></textarea>
+                <textarea name="" id="atkDesc2Val" placeholder="description de l'attaque" maxlength="100" title="Maximum 100 caractères"></textarea>
             </div>
             <div id="carteAtk3Info" class="carteAtk">
                 <div id="atk3Illu">
                     <label for="">ChoixIcone :</label>
-                    <div id="areaAtk3BoxOption"class="optionElement">
-                        <div><span>Rien</span><input value="0" type="radio" name="choixAtk3" checked></div>
-                        <div><span>Choix</span><input value="1" type="radio" name="choixAtk3"></div>
-                        <div><span>Importer</span><input value="2" type="radio" name="choixAtk3"></div>
-                    </div>
                     <div id="atk3OptionBox" class="fileOptionBox">
                         <select name="" id="atk3IconeValue" class="fileOptionSelected1">
                             <option value="" selected>- - -</option>
@@ -220,14 +195,11 @@
                             <option value="./assets/Ressources/Icone/TntCapacity.png">choixE</option>
                             <option value="./assets/Ressources/Icone/UndeadCapacity.png">choixF</option>
                         </select>
-                        <div class="fileOptionSelected2">
-                            <input type="file" name="" id="atk3Import">
-                        </div>
                     </div>
                 </div>
                 <div id="atkName3">
                     <label for="">Nom de l'attaque</label>
-                    <input type="text" name="" id="atkName3Val" placeholder="nom de l'attaque">
+                    <input type="text" name="" id="atkName3Val" placeholder="nom de l'attaque" maxlength="20"title="Maximum 40 caractères">
                 </div>
                 <div id="atkDmg3">
                     <label for="">Puissance d'attaque</label>
@@ -237,13 +209,12 @@
                     <label for="">Coût Mana</label>
                     <input type="number" name="" id="atkMana3Val" value="0">
                 </div>
-                <textarea name="" id="atk3DescVal" placeholder="description de l'attaque" maxlength="80"></textarea>
+                <textarea name="" id="atkDesc3Val" placeholder="description de l'attaque" maxlength="100" title="Maximum 100 caractères"></textarea>
             </div>
             <div id="carteComplement">
                 <div id="carteBorder">
                     <label for="">Choix de la bordure : </label>
                     <div id="areaBorderBoxOption" class="optionElement">
-                        <div><span>Rien</span><input value="0" type="radio" name="choixBorder" checked></div>
                         <div><span>Choix</span><input value="1" type="radio" name="choixBorder"></div>
                         <div><span>Importer</span><input value="2" type="radio" name="choixBorder"></div>
                     </div>
@@ -264,7 +235,6 @@
                 <div id="carteBackground">
                     <label for="">choix de l'arrière plan : </label>
                     <div id="areaBgBoxOption"class="optionElement">
-                        <div><span>Rien</span><input value="0" type="radio" name="choixBg" checked></div>
                         <div><span>Choix</span><input value="1" type="radio" name="choixBg"></div>
                         <div><span>Importer</span><input value="2" type="radio" name="choixBg"></div>
                     </div>
@@ -282,16 +252,15 @@
                             <input type="file" name="" id="bgImport">
                         </div>
                     </div>
-
                 </div>
                 <div id="carteFlavor">
-                    <label for="carteFlavorText">Text de narration : </label><textarea id="carteFlavorText" maxlength="40"></textarea>
+                    <label for="carteFlavorText">Text de narration : </label><textarea id="carteFlavorText" maxlength="100" title="Maximum 100 caractères"></textarea>
                 </div>
             </div>
         </div>
     </article>
     <div id="carteToPrint">
-        <input type="button" value="Imprimer">
+        <input type="button" value="Faire un instantanné" id="printToComputer">
     </div>
     <footer>
         <ul>
@@ -300,5 +269,6 @@
         </ul>
     </footer>
     <script src="./assets/JS/jquery-3.7.1.min.js"></script>
+    <script src="./assets/JS/html2canvas.min.js"></script>
     <script src="./assets/JS/main.js"></script>
 </body>
