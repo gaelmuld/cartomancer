@@ -100,16 +100,12 @@ $("#carteNbAtkVal").on("input", function () {
 /* Input radio > choix pour type de dessin  ( rien x choix x importer)*/
 //Initialisation
 $(".optionElement input:radio").each(function(){
-  $(this).parent().parent().next().children(".fileOptionSelected1").hide()
+  $(this).parent().parent().next().children(".fileOptionSelected1").show()
   $(this).parent().parent().next().children(".fileOptionSelected2").hide()
 })
 //logique
 $(".optionElement input:radio").each(function(){
   $(this).change(function(){
-    if($(this).val()==0){
-      $(this).parent().parent().next().children(".fileOptionSelected1").hide()
-      $(this).parent().parent().next().children(".fileOptionSelected2").hide()
-    }
       $(this).parent().parent().next().children(".fileOptionSelected"+$(this).val()).show()
       $(this).parent().parent().next().children(".fileOptionSelected"+(3-$(this).val())).hide()
     })
@@ -303,6 +299,13 @@ $("#placeProp").on("click", function () {
     $("#displacement").css("display", "none")
   }
 })
+//Crédits de l'illustration
+var Credits =""
+$("#carteCreditValue").on("input", function () {
+	Credits = $(this)
+	cl($(this))
+	$("#cardInfo3").text($(this).val())
+})
 
 //Centrage
 $("#manualPositionOption").hide();
@@ -312,22 +315,22 @@ $("input[name='centrage']").on('input', function () {
   }
   else {
     $("#manualPositionOption").hide();
-    $("#propIllustration").css("left", "calc(50% - "+25*scale+"px)")
-    $("#propIllustration").css("top", "calc(50% - "+25*scale+"px)")
+    $("#propIllustration").css("left", "calc(50% - "+50*scale+"px)")
+    $("#propIllustration").css("top", "calc(50% - "+50*scale+"px)")
   }
 });
 //horizontal
-$("#propIllustration").css("left", "calc(50%)")
+$("#propIllustration").css("left", "calc(50% - 50px)")
 $("#horizontalRange").on("input", function () {
   $("#propIllustration").css("left", "calc(50% + " + $(this).val() + "%")
   $("#horizontalValue").html($(this).val()+"");
 })
 
 //vertical
-$("#propIllustration").css("top", "calc(50%)")
+$("#propIllustration").css("top", "calc(50% - 50px)")
 $("#verticalRange").on("input", function () {
   $("#propIllustration").css("top", "calc(50% + " + $(this).val() + "%")
-  $("#verticalValue").html($(this).val()+"");
+  $("#verticalValue").html(-$(this).val()+"");
 })
 
 //flip
@@ -449,5 +452,3 @@ $("#printToComputer").on("click", function () {
 	//link.download = 'screenshot.png';
 	//link.click();
 })
-
-

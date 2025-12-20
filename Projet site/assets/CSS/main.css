@@ -95,15 +95,29 @@ select {
 
 #cartePosition {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 }
 
 #cartePosition #centrageOption {
     grid-row-end: 3;
 }
 
-#cartePosition #centrageOption #manualPositionOption {
-    display: flex;
+#cartePosition #manualPositionOption {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+#manualPositionOption>div {
+    line-height: 1.5em;
+}
+
+#manualPositionOption>div label {
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -180,7 +194,7 @@ select {
 }
 
 #carteComplement {
-    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
 }
 
 textarea {
@@ -220,7 +234,7 @@ footer>ul>li {
     width: calc(100% - var(--borderWidth));
     z-index: 100;
     background-size: contain;
-	background-repeat: no-repeat;
+    background-repeat: no-repeat;
 }
 
 #card>#inside {
@@ -298,7 +312,6 @@ footer>ul>li {
 
 div#cardText div.descriptionAtk {
     height: 100%;
-
 }
 
 .descriptionAtk img {
@@ -313,6 +326,14 @@ div#cardText div.descriptionAtk {
 
 .descriptionAtk>span:nth-of-type(2) {
     font-size: 1.33em;
+}
+.descriptionAtk>span:nth-of-type(3) {
+    font-size: 1.33em;
+	color:red
+}
+.descriptionAtk>span:nth-of-type(4) {
+    font-size: 1.33em;
+	color:blue
 }
 
 .descriptionAtk>span:last-of-type {
@@ -337,21 +358,27 @@ div#cardText div.descriptionAtk {
 }
 
 #cardInfo3 {
-    left: calc(var(--borderWidth) / 2);
-    bottom: calc(var(--borderWidth) / 2);
+    left: 10px;
+    bottom: 10px;
     outline-color: purple;
+    font-size: 0.75em;
+    height: 10px;
+    width: 50%;
+    font-style: italic;
+    color: var(--primary2);
+    text-shadow: 0 -1px 1px #111, 0 0 1px #eee;
 }
 
 #cardInfo4 {
     width: 40%;
     text-align: center;
-    height: 50px;
+    height: 30px;
     right: calc(var(--borderWidth) / 2);
     /*bottom: calc(var(--borderWidth) / 2);*/
     outline-color: rgb(255, 107, 141);
     font-size: 1.2em;
     line-height: 1em;
-    top: 418px;
+    bottom: -10px;
     left: 190px;
 }
 
@@ -362,7 +389,7 @@ div#cardText div.descriptionAtk {
     right: 5px;
     z-index: 100;
     position: relative;
-    top: -37px;
+    top: -18px;
     outline: 7px dotted rgb(94, 19, 32);
     display: grid;
     align-items: start;
