@@ -39,10 +39,8 @@ article {
 #cardArea>#wrapperCard {
     /*border: 1px solid #222;*/
     /*5:7*/
-    height: 440px;
-    width: 315px;
-    position: relative;
-    margin: auto;
+    height: calc(460px + 2*var(--borderRadius));
+    width: calc(315px + 2*var(--borderRadius));
 }
 
 input {
@@ -205,30 +203,32 @@ footer>ul>li {
     width: 100%;
     height: 100%;
     position: relative;
-    /*background-image: url("../Ressources/card0.png");*/
     background-size: calc(100% - 20px);
     background-position: center;
     background-repeat: no-repeat;
+    border-image-width: var(--borderWidth);
+    border-image-slice: 40;
+    border-image-repeat: repeat;
+}
+
+#card>* {
+    margin: calc(var(--borderWidth)/2);
 }
 
 #card>img {
     position: absolute;
-    width: 100%;
-    margin: 0;
+    width: calc(100% - var(--borderWidth));
     z-index: 100;
+    background-size: contain;
+	background-repeat: no-repeat;
 }
 
 #card>#inside {
     width: calc(315px + var(--borderWidth));
-    margin: auto;
     position: relative;
-    right: calc(var(--borderWidth) / 2);
-    bottom: calc(var(--borderWidth) / 2);
     height: calc(440px + var(--borderRadius));
-    border-image-source: url("../Ressources/border-image-3.png");
-    border-image-width: var(--borderWidth);
-    border-image-slice: 40;
-    border-image-repeat: repeat;
+    top: calc(0 - var(--borderWidth));
+    left: calc(0 - var(--borderWidth));
 }
 
 #cardValues {

@@ -234,11 +234,12 @@ $("#LoadButton").click(function () {
  * Code pour l'incrustation d'image - BORDURE
  */
 $("#encadrement").on("input", function () {
-  let value = $("#encadrement").val()
+	let value = $(this).val()
+	cl(value)
   if (value) {
-    $("#inside").css("border-image-source", "url('./assets/Ressources/" + value + "')");
+    $("#card").css("border-image-source", "url('./assets/Ressources/" + value + "')");
   } else {
-    $("#inside").css("border-image-source", "none");
+    $("#card").css("border-image-source", "none");
   }
 })
 
@@ -265,20 +266,20 @@ $("#numberOption").on("input", function () {
 $("#borderValue").on("input", function () {
   let value = $(this).val()
   if (value) {
-    $("#card>#inside").css("border-image-source", "url('" + value + "')");
+    $("#card").css("border-image-source", "url('" + value + "')");
   } else {
-    $("#card>#inside").css("border-image-source", "none");
+    $("#card").css("border-image-source", "none");
   }
 })
 /**
  * Code pour inclure une image d'arrière plan'
  */
 $("#bgValue").on("input", function () {
-  let value = $("#bgValue").val()
+  let value = $(this).val()
   if (value) {
-    $("#cardIllustration").css("background-image", "url('" + value + "')");
+    $("#card>img").css("background-image", "url('" + value + "')");
   } else {
-    $("#cardIllustration").css("background-image", "none");
+    $("#card>img").css("background-image", "none");
   }
 })
 
@@ -433,17 +434,20 @@ $("#debugMode").on("click", function () {
  * Faire un enregistrement sur le PC de la carte créée
  */
 const download = () => {
-	html2canvas(document.querySelector('#card')).then(
+	html2canvas(document.querySelector('#wrapperCard')).then(
 		canvas => {document.body.appendChild(canvas);}
 	);
 }
 
 $("#printToComputer").on("click", function () {
+	
 	download()
 	let link = document.createElement('a');
-	link.download = 'screenshot.png';
+	document.getElementById("carteToPrint").append(link)
 	link.href = canvas.toDataURL('image/png');
-	link.click();
+	link.innerHTML = "Download";
+	//link.download = 'screenshot.png';
+	//link.click();
 })
 
 
