@@ -1,0 +1,19 @@
+label:hover {
+    cursor: help;
+    color: var(--primary2);
+    font-size: 1.1em;
+    background-color: #fff9;
+    font-weight: bold;
+    border-radius: var(--borderRadius);
+    margin: calc(5px - 0.05em) 0;
+}
+
+.modal {
+    position: absolute;
+	z-index: 255;
+    background-color: #fff;
+    border-radius: var(--borderRadius);
+    padding: 0.5em;
+    box-shadow: 0 0 3px 0 black;
+	font-size: 1.5em;
+}

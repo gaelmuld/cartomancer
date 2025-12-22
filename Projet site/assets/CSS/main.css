@@ -1,6 +1,7 @@
 /* Les Variables */
 :root {
     --borderWidth: 30px;
+    --test: linear-gradient(180deg, rgba(42, 155, 106, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(16, 130, 84, 1) 100%);
     --primary2: #FA8E46;
     --primary1: #FA4F46;
     --secondary1: #a8c4ba;
@@ -12,7 +13,7 @@ body {
     margin: 0;
     padding: 0;
     font-size: 16px;
-    background-color: var(--secondary1);
+    background: linear-gradient(180deg, rgb(163, 255, 215) 0%, rgb(111, 238, 164) 50%, rgb(79, 216, 161) 100%);
     line-height: 1em;
 }
 
@@ -37,10 +38,12 @@ article {
 }
 
 #cardArea>#wrapperCard {
-    /*border: 1px solid #222;*/
+    overflow: hidden;
     /*5:7*/
-    height: calc(460px + 2*var(--borderRadius));
-    width: calc(315px + 2*var(--borderRadius));
+    height: 335px;
+    width: 243px;
+    margin: 0;
+    padding: 0;
 }
 
 input {
@@ -54,6 +57,7 @@ label {
     border-radius: var(--borderRadius);
     color: var(--primary1);
     font-weight: bold;
+    position: relative;
 }
 
 select,
@@ -217,38 +221,30 @@ footer>ul>li {
     width: 100%;
     height: 100%;
     position: relative;
-    background-size: calc(100% - 20px);
-    background-position: center;
+    background-size: contain;
     background-repeat: no-repeat;
-    border-image-width: var(--borderWidth);
-    border-image-slice: 40;
-    border-image-repeat: repeat;
+    overflow: hidden;
 }
 
-#card>* {
-    margin: calc(var(--borderWidth)/2);
-}
 
 #card>img {
     position: absolute;
-    width: calc(100% - var(--borderWidth));
-    z-index: 100;
+    width: 100%;
+    z-index: 10;
+}
+
+#card>#inside {
+    width: 100%;
+    position: relative;
+    height: 100%;
     background-size: contain;
     background-repeat: no-repeat;
 }
 
-#card>#inside {
-    width: calc(315px + var(--borderWidth));
-    position: relative;
-    height: calc(440px + var(--borderRadius));
-    top: calc(0 - var(--borderWidth));
-    left: calc(0 - var(--borderWidth));
-}
-
 #cardValues {
     position: absolute;
-    top: 0;
-    z-index: 100;
+    top: 0%;
+    z-index: 150;
     height: 100%;
     width: 100%;
     outline: 6px solid lightcoral;
@@ -269,11 +265,9 @@ footer>ul>li {
 }
 
 #cardIllustration {
-    width: calc(100% - var(--borderWidth));
+    width: 100%;
     position: relative;
-    top: calc(var(--borderWidth) / 2);
-    height: 70%;
-    margin: calc(var(--borderWidth) / 2);
+    height: 65%;
     overflow: hidden;
     background-size: cover;
     background-position: center;
@@ -308,6 +302,8 @@ footer>ul>li {
     font-weight: bold;
     font-size: 2em;
     color: rgb(72, 0, 0);
+    text-shadow: 0 0px 3px#ffffff;
+    filter: brightness(1.4);
 }
 
 div#cardText div.descriptionAtk {
@@ -327,13 +323,15 @@ div#cardText div.descriptionAtk {
 .descriptionAtk>span:nth-of-type(2) {
     font-size: 1.33em;
 }
+
 .descriptionAtk>span:nth-of-type(3) {
     font-size: 1.33em;
-	color:red
+    color: red
 }
+
 .descriptionAtk>span:nth-of-type(4) {
     font-size: 1.33em;
-	color:blue
+    color: blue
 }
 
 .descriptionAtk>span:last-of-type {
@@ -355,6 +353,7 @@ div#cardText div.descriptionAtk {
     font-weight: bold;
     font-size: 2em;
     color: rgb(12, 0, 57);
+    filter: brightness(2);
 }
 
 #cardInfo3 {
@@ -376,20 +375,19 @@ div#cardText div.descriptionAtk {
     right: calc(var(--borderWidth) / 2);
     /*bottom: calc(var(--borderWidth) / 2);*/
     outline-color: rgb(255, 107, 141);
-    font-size: 1.2em;
+    font-size: 1.05em;
     line-height: 1em;
-    bottom: -10px;
-    left: 190px;
+    bottom: 5px;
 }
 
 #cardText {
-    width: calc(95% - var(--borderWidth));
-    height: 110px;
+    width: 90%;
+    height: 80px;
     margin: auto;
     right: 5px;
     z-index: 100;
     position: relative;
-    top: -18px;
+    top: 0px;
     outline: 7px dotted rgb(94, 19, 32);
     display: grid;
     align-items: start;
@@ -408,11 +406,11 @@ div#cardText div.descriptionAtk {
 }
 
 #propIllustration {
-    width: 50px;
+    width: 100px;
     position: relative;
     z-index: 0;
-    top: calc(50% - 25px);
-    left: calc(50% - 25px);
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
     transform-origin: center center;
 }
 
