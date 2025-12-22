@@ -1,32 +1,27 @@
 /* Les Variables */
 :root {
     --borderWidth: 30px;
-    --primary1: #FA8E46;
-    --primary2: #FA4F46;
+    --test: linear-gradient(180deg, rgba(42, 155, 106, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(16, 130, 84, 1) 100%);
+    --primary2: #FA8E46;
+    --primary1: #FA4F46;
     --secondary1: #a8c4ba;
     --secondary2: #eaf8f4;
-    --borderRadius: 5px;
+    --borderRadius: 24px;
 }
 
 body {
     margin: 0;
     padding: 0;
     font-size: 16px;
-    background-color: var(--secondary1);
+    background: linear-gradient(180deg, rgb(163, 255, 215) 0%, rgb(111, 238, 164) 50%, rgb(79, 216, 161) 100%);
     line-height: 1em;
 }
 
 header {
-    border-radius: var(--borderRadius);
-    padding: 0px;
-    margin: 0;
+    height: 15vh;
     text-align: center;
 }
 
-header>* {
-    margin: 0;
-    padding: 0;
-}
 
 article {
     font-size: 0.5em;
@@ -43,13 +38,12 @@ article {
 }
 
 #cardArea>#wrapperCard {
-    /*border: 1px solid #222;*/
-    border-radius: var(--borderRadius);
+    overflow: hidden;
     /*5:7*/
-    height: 440px;
-    width: 315px;
-    position: relative;
-    margin: auto;
+    height: 335px;
+    width: 243px;
+    margin: 0;
+    padding: 0;
 }
 
 input {
@@ -63,6 +57,7 @@ label {
     border-radius: var(--borderRadius);
     color: var(--primary1);
     font-weight: bold;
+    position: relative;
 }
 
 select,
@@ -79,10 +74,6 @@ select {
     margin: 5px 0;
 }
 
-#cardInfo1 {
-    background-image: url("./Ressources/health_icon.png");
-}
-
 #options {
     display: grid;
     gap: 10px;
@@ -96,26 +87,41 @@ select {
     background: var(--secondary2);
     display: grid;
     height: 20em;
-    margin:2em;
+    margin: 2em;
     padding: 2em;
     border-radius: var(--borderRadius);
 
 }
-.fileOptionBox{
+
+.fileOptionBox {
     height: 4em;
 }
 
 #cartePosition {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 }
 
 #cartePosition #centrageOption {
     grid-row-end: 3;
 }
 
-#cartePosition #centrageOption #manualPositionOption {
-    display: flex;
+#cartePosition #manualPositionOption {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+#manualPositionOption>div {
+    line-height: 1.5em;
+}
+
+#manualPositionOption>div label {
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -133,17 +139,17 @@ select {
 #carteIllustration {
     grid-row: 1/3;
 }
-.optionElement>div{
-    display:grid;
+
+.optionElement>div {
+    display: grid;
     grid-template-columns: 3fr 1fr 5fr;
     align-items: center;
 }
-.optionElement>div>input{
+
+.optionElement>div>input {
     width: inherit;
     position: relative;
-    bottom:2px;
-}
-.optionElement>div>span{
+    bottom: 2px;
 }
 
 .previewBox {
@@ -154,12 +160,12 @@ select {
 }
 
 .carteAtk {
-    grid-template-columns: repeat(4,1fr);
-    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
 }
 
 .carteAtk>* {
-    margin:0;
+    margin: 0;
     margin-bottom: 1em;
 }
 
@@ -183,7 +189,7 @@ select {
 
 }
 
-#carteAtk3Info>#atk3DescVal {
+#carteAtk3Info>#atkDesc3Val {
     grid-column: 2/5;
     width: 95%;
     height: 60px;
@@ -192,7 +198,7 @@ select {
 }
 
 #carteComplement {
-    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
 }
 
 textarea {
@@ -215,38 +221,32 @@ footer>ul>li {
     width: 100%;
     height: 100%;
     position: relative;
-    /*background-image: url("../Ressources/card0.png");*/
-    background-size: calc(100% - 20px);
-    background-position: center;
+    background-size: contain;
     background-repeat: no-repeat;
+    overflow: hidden;
 }
+
 
 #card>img {
     position: absolute;
     width: 100%;
-    margin: 0;
-    z-index: 100;
+    z-index: 10;
 }
 
 #card>#inside {
-    width: calc(100% + var(--borderWidth));
-    margin: auto;
+    width: 100%;
     position: relative;
-    right: calc(var(--borderWidth) / 2);
-    bottom: calc(var(--borderWidth) / 2);
-    height: calc(100% + 6* var(--borderRadius));
-    border-image-source: url("../Ressources/border-image-3.png");
-    border-image-width: var(--borderWidth);
-    border-image-slice: 40;
-    border-image-repeat: repeat;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 #cardValues {
     position: absolute;
-    top: 0;
-    z-index: 100;
-    width: 100%;
+    top: 0%;
+    z-index: 150;
     height: 100%;
+    width: 100%;
     outline: 6px solid lightcoral;
 }
 
@@ -257,20 +257,17 @@ footer>ul>li {
 }
 
 .field {
-    width: 10%;
+    width: 30px;
     height: 30px;
     border-width: 1px;
-    border-radius: var(--borderRadius);
     z-index: 100;
     outline: 3px solid #222;
 }
 
 #cardIllustration {
-    width: calc(100% - var(--borderWidth));
+    width: 100%;
     position: relative;
-    top: calc(var(--borderWidth) / 2);
-    height: 70%;
-    margin: calc(var(--borderWidth) / 2);
+    height: 65%;
     overflow: hidden;
     background-size: cover;
     background-position: center;
@@ -278,9 +275,10 @@ footer>ul>li {
 
 
 #cardTitre {
-    width: 55%;
+    width: 45%;
     text-align: center;
-    height: 60px;
+    height: 40px;
+    margin-left: 5%;
     left: calc(var(--borderWidth) / 2);
     top: calc(var(--borderWidth) / 2);
 }
@@ -288,75 +286,112 @@ footer>ul>li {
 
 #cardTitre>h3 {
     text-align: center;
+    position: relative;
+    top: -15px;
 }
 
 #cardInfo1 {
     right: calc(var(--borderWidth) / 2 + 12%);
     top: calc(var(--borderWidth) / 2);
     outline-color: red;
+    background-image: url("../Ressources/health_icon.png");
+    background-size: contain;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 2em;
+    color: rgb(72, 0, 0);
+    text-shadow: 0 0px 3px#ffffff;
+    filter: brightness(1.4);
+}
+
+div#cardText div.descriptionAtk {
+    height: 100%;
 }
 
 .descriptionAtk img {
-    width: 33px;
+    width: 100%;
 }
 
-.descriptionAtk>div span:nth-of-type(2) {
-    font-size: 1.5em;
+.descriptionAtk>span:nth-of-type(1) {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    height: 10px;
 }
 
-.descriptionAtk>div span:nth-of-type(3) {
-    margin: 0 3%;
+.descriptionAtk>span:nth-of-type(2) {
+    font-size: 1.33em;
 }
 
-.descriptionAtk>div span:nth-of-type(4) {
-    margin: 0 3%;
+.descriptionAtk>span:nth-of-type(3) {
+    font-size: 1.33em;
+    color: red
 }
 
-.descriptionAtk>div span:nth-of-type(5) {
-    margin: 0 3%;
-    grid-row: 2;
-    grid-column-start: 1;
+.descriptionAtk>span:nth-of-type(4) {
+    font-size: 1.33em;
+    color: blue
+}
+
+.descriptionAtk>span:last-of-type {
+    grid-column-start: 2;
     grid-column-end: 5;
+    line-height: 1em;
+    font-size: .75em;
 }
 
 #cardInfo2 {
     right: calc(var(--borderWidth) / 2);
     top: calc(var(--borderWidth) / 2);
     outline-color: green;
+    background-image: url("../Ressources/mana_icon.png");
+    background-size: contain;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 2em;
+    color: rgb(12, 0, 57);
+    filter: brightness(2);
 }
 
 #cardInfo3 {
-    left: calc(var(--borderWidth) / 2);
-    bottom: calc(var(--borderWidth) / 2);
+    left: 10px;
+    bottom: 10px;
     outline-color: purple;
+    font-size: 0.75em;
+    height: 10px;
+    width: 50%;
+    font-style: italic;
+    color: var(--primary2);
+    text-shadow: 0 -1px 1px #111, 0 0 1px #eee;
 }
 
 #cardInfo4 {
     width: 40%;
     text-align: center;
-    height: 50px;
+    height: 30px;
     right: calc(var(--borderWidth) / 2);
     /*bottom: calc(var(--borderWidth) / 2);*/
     outline-color: rgb(255, 107, 141);
-    font-size: 1.2em;
+    font-size: 1.05em;
     line-height: 1em;
-    top: 418px;
-    left: 190px;
+    bottom: 5px;
 }
 
 #cardText {
-    width: calc(90% - var(--borderWidth));
-    height: 10%;
-    margin: 5%;
-    right : 5px;
-    font-size: 0.8em;
+    width: 90%;
+    height: 80px;
+    margin: auto;
+    right: 5px;
     z-index: 100;
     position: relative;
-    top: -62px;
-    border-radius: var(--borderRadius);
+    top: 0px;
     outline: 7px dotted rgb(94, 19, 32);
     display: grid;
-    align-items: center;
+    align-items: start;
+    row-gap: 1em;
 }
 
 #cardText>div {
@@ -371,11 +406,11 @@ footer>ul>li {
 }
 
 #propIllustration {
-    width: 50px;
+    width: 100px;
     position: relative;
     z-index: 0;
-    top: calc(50% - 25px);
-    left: calc(50% - 25px);
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
     transform-origin: center center;
 }
 

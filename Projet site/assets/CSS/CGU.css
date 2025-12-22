@@ -9,6 +9,8 @@
     --titleColor: #1f4e3e;
     
     --marginSides: 10%;
+
+    --footerFontSize: 16px;
 }
 
 body {
@@ -44,4 +46,16 @@ p {
 
 ul {
     color: var(--textColor);
+}
+
+footer {
+    border-radius: var(--borderRadius);
+    padding: 5px;
+    
+    font-size: var(--footerFontSize);
+}
+
+footer>ul>li {
+    display: inline-block;
+    list-style-type: none;
 }

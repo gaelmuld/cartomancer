@@ -8,9 +8,11 @@
     --textColor: #534e4e;
     --titleColor: #1f4e3e;
     
-    --marginSides: 5%;
+    --marginSides: 10%;
 
     --marginLong: 25%;
+
+    --footerFontSize: 16px;
 }
 
 body {
@@ -24,10 +26,10 @@ body {
     padding: 0;
 
     font-size: 16px;
-    
+    font-family: "espiritu", sans-serif;font-weight: 400;font-style: normal;
     background-color: var(--secondary1);
     line-height: 1em;
-    
+
 }
 
 h1 {
@@ -49,6 +51,8 @@ p {
     color: var(--titleColor);
     margin-right: 2%;
     margin-left: 2%;
+
+    max-width: 80%;
 }
 
 #LiensRésaux {
@@ -57,16 +61,35 @@ p {
     
 }
 
-.BlockIndividu:nth-of-type(even){
-    outline: 1px solid var(--textColor);
 
-    margin: var(--marginSides);
-    margin-right: var(--marginLong);
-}
 
-.BlockIndividu:nth-of-type(odd){
+.blockParent{
+    margin: 3% 0;
     outline: 1px solid var(--textColor);
     
-    margin: var(--marginSides);
-    margin-left: var(--marginLong);
+}
+.blockParent>* {
+    display: inline-block;
+    
+}
+
+footer {
+    border-radius: var(--borderRadius);
+    padding: 5px;
+
+    font-size: var(--footerFontSize);
+}
+
+footer>ul>li {
+    display: inline-block;
+    list-style-type: none;
+}
+
+img{
+    margin: 0 5px 0;
+    width: 20%;
+}
+
+.infoBlock{
+    width: 75%;
 }
