@@ -24,6 +24,6 @@ $("#printToComputer").on("click", function () {
 		link.click();
 		link.remove()
 
-	}, 1200);
+	}, 2400);
 
 })

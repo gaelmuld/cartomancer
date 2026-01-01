@@ -4,6 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="./assets/Ressources/card.ico" type="image/x-icon">
 	<link rel="stylesheet" href="https://use.typekit.net/vbf4kqw.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -70,21 +71,21 @@
 			<div id="carteBase">
 				<div id="carteIllustration">
 					<div id="illustrationBoxOption">
-						<label infoModal="Élément visuel démontrant une créature" for="">Illustration</label >
-						<div id="areaIllustrationBoxOption" class="optionElement">
-							<div><span>Choix</span><input value="1" type="radio" selected name="choixIllustration">
+						<label infoModal="Élément visuel démontrant une créature (max 1Mo)" for="">Illustration</label>
+						<!--<div id="areaIllustrationBoxOption" class="optionElement">
+													<div><span>Choix</span><input value="1" type="radio" checked name="choixIllustration">
 							</div>
 							<div><span>Importer</span><input value="2" type="radio" name="choixIllustration"></div>
-						</div>
+						</div>-->
 						<div id="filellustrationOptionBox" class="fileOptionBox">
 							<select name="" id="IllustrationValue" class="fileOptionSelected1">
 								<option value="" selected>- - -</option>
-								<option value="./assets/Ressources/creatureprojet1V2_png.png">choixA</option>
-								<option value="./assets/Ressources/Creatureprojet3_png.png">choixB</option>
-								<option value="./assets/Ressources/T_MetalDemonIconBgLess.png">choixC</option>
-								<option value="./assets/Ressources/creatureprojet4_png.png">choixD</option>
-								<option value="">choixE</option>
+								<option value="./assets/Ressources/creatureprojet1.png">Chat Cornu</option>
+								<option value="./assets/Ressources/Creatureprojet3.png">Toison de feu</option>
+								<option value="./assets/Ressources/creatureprojet4.png">Hibougriffe</option>
+								<option value="./assets/Ressources/T_MetalDemonIconBgLess.png">Démon du metal</option>
 							</select>
+							<div>OU</div>
 							<div class="fileOptionSelected2">
 								<input type="file" name="" id="illuImport">
 							</div>
@@ -143,12 +144,12 @@
 				<div id="Atk1OptionBox" class="fileOptionBox">
 					<select name="" id="atk1IconeValue" class="fileOptionSelected1">
 						<option value="" selected>- - -</option>
-						<option value="./assets/Ressources/Icone/PoisonCapacity.png">choixA</option>
-						<option value="./assets/Ressources/Icone/PunchCapacity.png">choixB</option>
-						<option value="./assets/Ressources/Icone/ShieldCapacity.png">choixC</option>
-						<option value="./assets/Ressources/Icone/ThunderCapacity.png">choixD</option>
-						<option value="./assets/Ressources/Icone/TntCapacity.png">choixE</option>
-						<option value="./assets/Ressources/Icone/UndeadCapacity.png">choixF</option>
+						<option value="./assets/Ressources/Icone/PoisonCapacity.png">Poison</option>
+						<option value="./assets/Ressources/Icone/PunchCapacity.png">Punch</option>
+						<option value="./assets/Ressources/Icone/ShieldCapacity.png">Bouclier</option>
+						<option value="./assets/Ressources/Icone/ThunderCapacity.png">Foudre</option>
+						<option value="./assets/Ressources/Icone/TntCapacity.png">TNT</option>
+						<option value="./assets/Ressources/Icone/UndeadCapacity.png">Mort-vivant</option>
 					</select>
 				</div>
 			</div>
@@ -232,29 +233,29 @@
 		</div>
 		<div id="carteComplement">
 			<div id="carteBackground">
-				<label infoModal="Arrière-plan de l'illustration de la créature" for="">choix de l'arrière plan : </label >
-				<div id="areaBgBoxOption" class="optionElement">
+				<label infoModal="Arrière-plan de l'illustration de la créature (max 1Mo)" for="">choix de l'arrière plan : </label>
+				<!--<div id="areaBgBoxOption" class="optionElement">
 					<div><span>Choix</span><input value="1" type="radio" name="choixBg" checked></div>
 					<div><span>Importer</span><input value="2" type="radio" name="choixBg"></div>
-				</div>
+				</div>-->
 
 				<div id="bgOptionBox" class="fileOptionBox">
 					<select name="" id="bgValue" class="fileOptionSelected1">
 						<option value="" selected>- - -</option>
-						<option value="./assets/Ressources/creatureprojet1V2_fond_jpeg.jpg">choixA</option>
-						<option value="./assets/Ressources/fondtest2_jpeg.jpg">choixB</option>
-						<option value="./assets/Ressources/DumbBg.png">choixC</option>
-						<option value="./assets/Ressources/fondtest3_jpeg.jpg">choixD</option>
-						<option value="">choixE</option>
+						<option value="./assets/Ressources/creatureprojet1V2_fond_jpeg.jpg">Fossile</option>
+						<option value="./assets/Ressources/fondtest2_jpeg.jpg">Flocon d'automne</option>
+						<option value="./assets/Ressources/DumbBg.png">Projecteur</option>
+						<option value="./assets/Ressources/fondtest3_jpeg.jpg">Cristaux Azurés</option>
 					</select>
+					<div>OU</div>
 					<div class="fileOptionSelected2">
 						<input type="file" name="" id="bgImport">
 					</div>
 				</div>
 			</div>
 			<div id="carteFlavor">
-				<label infoModal="Description de la carte contenant 100 caractères maximum" for="carteFlavorText">Text de narration : </label ><textarea id="carteFlavorText" maxlength="100"
-					title="Maximum 100 caractères"></textarea>
+				<label infoModal="Description de la carte contenant 70 caractères maximum" for="carteFlavorText">Text de narration :
+				</label><textarea id="carteFlavorText" maxlength="70" title="Maximum 70 caractères"></textarea>
 			</div>
 			<div id="carteCredit">
 				<label infoModal="Nom du créateur de la carte contenant 40 caractères maximum" for="carteCreditValue">credit de la carte</label >
@@ -269,8 +270,7 @@
 		<input type="button" value="Charger" id="loadButton">
 		<input type="button" value="Exporter" id="exportButton">
 		<label infoModal="Code reçu pour l'importation de la carte à mettre. Le code est très long" for="">Code d'export</label >
-				<input type="text" name="" id="exportCode" placeholder="Entrez un code d'export" 
-					title="Code d'export">
+		<textarea type="text" name="" id="exportCode" placeholder="Entrez un code d'export" title="Code d'export"></textarea>
 	</div>
 	<footer>
 		<ul>
@@ -284,4 +284,4 @@
 	<script src="./assets/JS/main.js"></script>
 	<script src="./assets/JS/labelMobal.js"></script>
 	<script src="./assets/JS/saveOnComputer.js"></script>
-</body>
+</body>     
